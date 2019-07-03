@@ -66,10 +66,10 @@ namespace Composite
 		{
 			std::cout << "\n\n Composite Pattern." << std::endl;
 
-			Employee* cto = new Employee("RenChunhong", "CTO", 30000);
-			Employee* pro1 = new Employee("YuLi", "Programer", 23000);
-			Employee* pro2 = new Employee("XieGang", "Programer", 21000);
-			Employee* pro3 = new Employee("Virtual", "Programer", 10000);
+			Employee* cto = new Employee("A", "CTO", 30000);
+			Employee* pro1 = new Employee("B", "Programer", 23000);
+			Employee* pro2 = new Employee("C", "Programer", 21000);
+			Employee* pro3 = new Employee("D", "Programer", 10000);
 
 			cto->add(pro1);
 			cto->add(pro2);

@@ -51,6 +51,15 @@ namespace Composite
 				}
 			}
 		}
+		
+		void process() {
+			std::cout << name() << " have remain subordinates:" << std::endl;
+			
+			for (auto& it : subordinates()) {
+				std::cout << "[name: " << it->name() << ", dept: "
+					<< it->dept() << ", salary: " << it->salary() << "]" << std::endl;
+			}
+		}
 
 	private:
 		std::string name_;
@@ -74,23 +83,13 @@ namespace Composite
 			cto->add(pro1);
 			cto->add(pro2);
 			cto->add(pro3);
-
-			std::cout << cto->name() << " have subordinates:" << std::endl;
-
-			for (auto& it : cto->subordinates()) {
-				std::cout << "[name: " << it->name() << ", dept: "
-					<< it->dept() << ", salary: " << it->salary() << "]" << std::endl;
-			}
+			
+			cto->process();
 
 			std::cout << "remove subordinate: " << pro3->name() << std::endl;
-
 			cto->remove(pro3);
-			std::cout << cto->name() << " have remain subordinates:" << std::endl;
-
-			for (auto& it : cto->subordinates()) {
-				std::cout << "[name: " << it->name() << ", dept: "
-					<< it->dept() << ", salary: " << it->salary() << "]" << std::endl;
-			}
+			
+			cto->process();
 		}
 	}
 }
